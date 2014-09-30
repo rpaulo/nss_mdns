@@ -4,7 +4,12 @@ LIB=		nss_mdns
 SHLIB_MAJOR=	1
 SHLIB_NAME=	${LIB}.so.${SHLIB_MAJOR}
 MAN=
+SRCS=		nss_mdns.c
 
-SRCS=	nss_mdns.c
+install:
+	${INSTALL} ${STRIP} -o ${LIBOWN} -g ${LIBGRP} -m ${LIBMODE} \
+	${_INSTALLFLAGS} ${_SHLINSTALLFLAGS} \
+	${SHLIB_NAME} ${DESTDIR}${_SHLIBDIR}
+	${INSTALL_SYMLINK} ${SHLIB_NAME} ${DESTDIR}${_LIBDIR}/${SHLIB_LINK}
 
 .include <bsd.lib.mk>
