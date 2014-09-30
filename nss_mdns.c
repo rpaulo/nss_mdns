@@ -463,7 +463,7 @@ static int
 avahi_parse_name_result(struct mdns_handle *md_handle,
     struct mdns_result *md_res)
 {
-	unsigned char addr[64], buf[128];
+	char addr[64], buf[128];
 
 	if (avahi_read_reply(md_handle->s, buf, sizeof(buf)) < 0)
 		return (1);
@@ -483,7 +483,7 @@ avahi_parse_name_result(struct mdns_handle *md_handle,
 static int
 avahi_parse_addr_result(struct mdns_handle *md_handle, struct mdns_result *md_res)
 {
-	unsigned char buf[128];
+	char buf[128];
 
 	if (avahi_read_reply(md_handle->s, buf, sizeof(buf)) < 0)
 		return (1);
