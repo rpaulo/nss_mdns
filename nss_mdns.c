@@ -40,7 +40,7 @@
 #include <net/route.h>
 #include <nsswitch.h>
 
-#define	DEBUG
+/*#define	DEBUG*/
 #ifdef DEBUG
 #define	MDNS_DEBUG(_msg, ...)	syslog(LOG_DEBUG, "nss_mdns: " _msg, \
 				    ## __VA_ARGS__)
